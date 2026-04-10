@@ -1,0 +1,13 @@
+asgiref
+Django==5.1.0
+django-cors-headers
+django-rest-framework
+dj-database-url
+gunicorn
+psycopg2-binary
+requests
+whitenoise
+scikit-learn
+pandas
+numpy
+joblib

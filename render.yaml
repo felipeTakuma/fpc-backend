@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: fpc-backend
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn FPC_Project.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.5
+      - key: DJANGO_SETTINGS_MODULE
+        value: FPC_Project.settings
