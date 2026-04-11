@@ -6,12 +6,8 @@ pip install -r requirements.txt
 python manage.py collectstatic --no-input
 python manage.py migrate
 
-# Crea el superusuario usando las variables de entorno de Render
-if [ "$CREATE_SUPERUSER" ]; then
-  python manage.py createsuperuser --no-input || true
-fi
+# CREACIÓN FORZADA DE SUPERUSUARIO (Directo en el script)
+python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username='admin_takuma').exists() or User.objects.create_superuser('admin_takuma', 'paezrinconfelipe@gmail.com', 'takumafpc')"
 
-# Carga los datos si el archivo existe
-if [ -f iniciales.json ]; then
-  python manage.py loaddata iniciales.json
-fi
+# CARGA DE DATOS (Asegurando la ruta)
+python manage.py loaddata iniciales.json
