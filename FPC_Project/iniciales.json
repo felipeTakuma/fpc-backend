@@ -1,0 +1,857 @@
+[
+{
+  "model": "liga.equipo",
+  "pk": 1,
+  "fields": {
+    "nombre_equipo": "Junior",
+    "ciudad": "Barranquilla",
+    "historia": "JUNIOR fue fundado en 1924, ha sido ganador de 9 títulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Sudamericana 2018",
+    "ligas_ganadas": 10,
+    "escudo": "escudos/ESCUDO_JUNIOR.png",
+    "nombre_estadio": "Estadio Metropolitano Roberto Meléndez",
+    "latitud": 10.927065943161638,
+    "longitud": -74.80060613737987
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 2,
+  "fields": {
+    "nombre_equipo": "Atletico Bucaramanga",
+    "ciudad": "Bucaramanga",
+    "historia": "ATLETICO BUCARAMANGA fue fundado en 1949, ha sido ganador de 1 título y no aplica a torneo internacional.",
+    "ligas_ganadas": 1,
+    "escudo": "escudos/bucaros_escudo_we9nVqJ.webp",
+    "nombre_estadio": "Estadio Departamental Américo Montanini",
+    "latitud": 7.136871277117793,
+    "longitud": -73.11659995089899
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 3,
+  "fields": {
+    "nombre_equipo": "Medellin",
+    "ciudad": "Medellin",
+    "historia": "MEDELLIN fue fundado en 1913, ha sido ganador de 6 títulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Libertadores 2003.",
+    "ligas_ganadas": 6,
+    "escudo": "escudos/Medellín_Escudo.png",
+    "nombre_estadio": "Estadio Atanasio Girardot",
+    "latitud": 6.2569163089890925,
+    "longitud": -75.59017826437898
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 4,
+  "fields": {
+    "nombre_equipo": "Fortaleza",
+    "ciudad": "Bogota",
+    "historia": "FORTALEZA fue fundado en 2010, no tiene títulos de liga y no aplica a torneo internacional.",
+    "ligas_ganadas": 0,
+    "escudo": "escudos/forta_escudo.png",
+    "nombre_estadio": "Estadio Techo Occidental Sur",
+    "latitud": 4.6234092041004935,
+    "longitud": -74.13671365703479
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 5,
+  "fields": {
+    "nombre_equipo": "Atletico Nacional",
+    "ciudad": "Medellin",
+    "historia": "ATLETICO NACIONAL fue fundado en 1947, ha sido ganador de 17 títulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores (2 veces).",
+    "ligas_ganadas": 18,
+    "escudo": "escudos/Atlético_Nacional_Escudo_Nhpq3Hf.png",
+    "nombre_estadio": "Estadio Atanasio Girardot",
+    "latitud": 6.2569163089890925,
+    "longitud": -75.59017826437898
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 6,
+  "fields": {
+    "nombre_equipo": "Tolima",
+    "ciudad": "Ibague",
+    "historia": "TOLIMA fue fundado en 1954, ha sido ganador de 3 títulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Sudamericana 2006.",
+    "ligas_ganadas": 3,
+    "escudo": "escudos/Escudo_Tolima.png",
+    "nombre_estadio": "Estadio Manuel Murillo Toro",
+    "latitud": 4.430622831685326,
+    "longitud": -75.21810019151111
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 7,
+  "fields": {
+    "nombre_equipo": "Santa Fe",
+    "ciudad": "Bogota",
+    "historia": "SANTA FE fue fundado en 1941, ha sido ganador de 9 títulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Sudamericana 2015.",
+    "ligas_ganadas": 9,
+    "escudo": "escudos/santa_fe_escudo_23bJGqd.png",
+    "nombre_estadio": "Estadio Nemesio Camacho El Campin",
+    "latitud": 4.646194394880359,
+    "longitud": -74.07756154318037
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 8,
+  "fields": {
+    "nombre_equipo": "Alianza FC",
+    "ciudad": "Valledupar",
+    "historia": "ALIANZA FC fue fundado en 2024, no tiene títulos de liga y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Sudamericana 2024.",
+    "ligas_ganadas": 0,
+    "escudo": "escudos/alianza_escudo.jpg",
+    "nombre_estadio": "Estadio Armando Maestre",
+    "latitud": 10.465951156533052,
+    "longitud": -73.24948233738232
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 9,
+  "fields": {
+    "nombre_equipo": "Llaneros",
+    "ciudad": "Villavicencio",
+    "historia": "LLANEROS fue fundado en 2011, no tiene títulos de liga y no aplica a torneo internacional.",
+    "ligas_ganadas": 0,
+    "escudo": "escudos/llaneros_escudo.jpg",
+    "nombre_estadio": "Estadio Bello Horizonte",
+    "latitud": 4.140134120167798,
+    "longitud": -73.62041509137504
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 10,
+  "fields": {
+    "nombre_equipo": "Deportivo Cali",
+    "ciudad": "Cali",
+    "historia": "DEPORTIVO CALI fue fundado en 1912, ha sido ganador de 10 títulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Libertadores (2 veces).",
+    "ligas_ganadas": 10,
+    "escudo": "escudos/Deportivo_Cali_Escudo.png",
+    "nombre_estadio": "Estadio Palmaseca",
+    "latitud": 3.522071597168841,
+    "longitud": -76.41697867785311
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 11,
+  "fields": {
+    "nombre_equipo": "Once Caldas",
+    "ciudad": "Caldas",
+    "historia": "\"ONCE CALDAS fue fundado en 1961, ha sido ganador de 4 títulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores 2004.\r\n\r\n\"",
+    "ligas_ganadas": 4,
+    "escudo": "escudos/once_caldas_escudo_NjOj4ih.png",
+    "nombre_estadio": "Estadio Palogrande",
+    "latitud": 5.057124106096885,
+    "longitud": -75.48997880670935
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 12,
+  "fields": {
+    "nombre_equipo": "Deportivo Pereira",
+    "ciudad": "Pereira",
+    "historia": "DEPORTIVO PEREIRA fue fundado en 1944, ha sido ganador de 1 título y su mejor resultado en competencias internacionales ha sido los Octavos de final de la Copa Libertadores 2023.",
+    "ligas_ganadas": 1,
+    "escudo": "escudos/pereira_escudo.png",
+    "nombre_estadio": "Estadio Hernan Ramirez Villegas",
+    "latitud": 4.804343413982567,
+    "longitud": -75.75200614903191
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 13,
+  "fields": {
+    "nombre_equipo": "America de Cali",
+    "ciudad": "Cali",
+    "historia": "AMERICA DE CALI fue fundado en 1927, ha sido ganador de 15 títulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Libertadores (4 veces).",
+    "ligas_ganadas": 15,
+    "escudo": "escudos/América_de_Cali_escudo.png",
+    "nombre_estadio": "Estadio Pascual guerrero",
+    "latitud": 3.430133854126975,
+    "longitud": -76.54094749615665
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 14,
+  "fields": {
+    "nombre_equipo": "Aguilas Doradas",
+    "ciudad": "Rionegro",
+    "historia": "AGUILAS DORADAS fue fundado en 2008, no tiene títulos de liga y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 2024.",
+    "ligas_ganadas": 1,
+    "escudo": "escudos/aguilas_escudo.jpg",
+    "nombre_estadio": "Estadio Alberto Grisales",
+    "latitud": 6.146869675934379,
+    "longitud": -75.37271934902394
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 15,
+  "fields": {
+    "nombre_equipo": "Millonarios",
+    "ciudad": "Bogota",
+    "historia": "MILLONARIOS fue fundado en 1946, ha sido ganador de 16 títulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Libertadores 1989.",
+    "ligas_ganadas": 16,
+    "escudo": "escudos/Millonarios_Escudo.png",
+    "nombre_estadio": "Estadio Nemesio Camacho El Campin",
+    "latitud": 4.646322062749254,
+    "longitud": -74.07756154318037
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 16,
+  "fields": {
+    "nombre_equipo": "Envigado",
+    "ciudad": "Envigado",
+    "historia": "ENVIGADO fue fundado en 1989, no tiene títulos de liga y no aplica a torneo internacional.",
+    "ligas_ganadas": 0,
+    "escudo": "escudos/envigado_escudo.png",
+    "nombre_estadio": "Estadio Polideportivo Sur",
+    "latitud": 6.164638436355492,
+    "longitud": -75.59967776436186
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 17,
+  "fields": {
+    "nombre_equipo": "Union Magdalena",
+    "ciudad": "Magdalena",
+    "historia": "UNION MAGDALENA fue fundado en 1953, ha sido ganador de 1 título y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 1969.",
+    "ligas_ganadas": 1,
+    "escudo": "escudos/union_magdalena_escudo.jpg",
+    "nombre_estadio": "Estadio Sierra Nevada",
+    "latitud": 11.190798797511762,
+    "longitud": -74.19926496438836
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 18,
+  "fields": {
+    "nombre_equipo": "Boyaca Chico",
+    "ciudad": "Tunja",
+    "historia": "BOYACA CHICO fue fundado en 2002, ha sido ganador de 1 título y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 2008.",
+    "ligas_ganadas": 1,
+    "escudo": "escudos/Boyaca-chico_escudo.png",
+    "nombre_estadio": "Estadio La Independencia",
+    "latitud": 5.542289590251972,
+    "longitud": -73.35335917573855
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 19,
+  "fields": {
+    "nombre_equipo": "Internacional De Bogota",
+    "ciudad": "Bogota",
+    "historia": "EQUIDAD(Anteriormente) fue fundado en 1982, no tiene títulos de liga y su mejor resultado en competencias internacionales ha sido los Cuartos de final de la Copa Sudamericana 2019.",
+    "ligas_ganadas": 0,
+    "escudo": "escudos/inter_bogota_escudo.png",
+    "nombre_estadio": "Estadio Metropolitano de Techo",
+    "latitud": 4.623668784520483,
+    "longitud": -74.13579466438284
+  }
+},
+{
+  "model": "liga.equipo",
+  "pk": 20,
+  "fields": {
+    "nombre_equipo": "Pasto",
+    "ciudad": "Pasto",
+    "historia": "PASTO fue fundado en 1949, ha sido ganador de 1 título y su mejor resultado en competencias internacionales ha sido los Octavos de final de la Copa Sudamericana 2009.",
+    "ligas_ganadas": 1,
+    "escudo": "escudos/pasto_escudo_y985ijg.png",
+    "nombre_estadio": "Estadio Departamental Libertad",
+    "latitud": 1.198251103299474,
+    "longitud": -77.27792690854018
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 1,
+  "fields": {
+    "nombre": "Hugo Rodallega",
+    "nacionalidad": "Colombia",
+    "equipo": 7,
+    "goles": 16,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 2,
+  "fields": {
+    "nombre": "Dayro Moreno",
+    "nacionalidad": "Colombia",
+    "equipo": 11,
+    "goles": 11,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 3,
+  "fields": {
+    "nombre": "Gonzalo Lencina",
+    "nacionalidad": "Argentina",
+    "equipo": 6,
+    "goles": 10,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 4,
+  "fields": {
+    "nombre": "Edwin Cardona",
+    "nacionalidad": "Colombia",
+    "equipo": 5,
+    "goles": 9,
+    "asistencias": 6,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 5,
+  "fields": {
+    "nombre": "Alfredo Morelos",
+    "nacionalidad": "Colombia",
+    "equipo": 5,
+    "goles": 8,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 6,
+  "fields": {
+    "nombre": "Duvan Vergara",
+    "nacionalidad": "Colombia",
+    "equipo": 13,
+    "goles": 7,
+    "asistencias": 6,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 7,
+  "fields": {
+    "nombre": "Rodrigo Holgado",
+    "nacionalidad": "Argentina",
+    "equipo": 13,
+    "goles": 7,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 8,
+  "fields": {
+    "nombre": "Jairo Molina",
+    "nacionalidad": "Colombia",
+    "equipo": 18,
+    "goles": 7,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 9,
+  "fields": {
+    "nombre": "Kevin Viveros",
+    "nacionalidad": "Colombia",
+    "equipo": 5,
+    "goles": 6,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 10,
+  "fields": {
+    "nombre": "Emilio Aristizabal",
+    "nacionalidad": "Colombia",
+    "equipo": 4,
+    "goles": 6,
+    "asistencias": 0,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 11,
+  "fields": {
+    "nombre": "Jefry Zapata",
+    "nacionalidad": "Colombia",
+    "equipo": 11,
+    "goles": 7,
+    "asistencias": 3,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 12,
+  "fields": {
+    "nombre": "Jose Enamorado",
+    "nacionalidad": "Colombia",
+    "equipo": 1,
+    "goles": 8,
+    "asistencias": 6,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 13,
+  "fields": {
+    "nombre": "Yoshan Valois",
+    "nacionalidad": "Colombia",
+    "equipo": 20,
+    "goles": 10,
+    "asistencias": 3,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 14,
+  "fields": {
+    "nombre": "Brayan Leon",
+    "nacionalidad": "Colombia",
+    "equipo": 3,
+    "goles": 10,
+    "asistencias": 5,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 15,
+  "fields": {
+    "nombre": "Carlos Lucumi",
+    "nacionalidad": "Colombia",
+    "equipo": 8,
+    "goles": 10,
+    "asistencias": 4,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 16,
+  "fields": {
+    "nombre": "Luciano Pons",
+    "nacionalidad": "Argentina",
+    "equipo": 2,
+    "goles": 12,
+    "asistencias": 6,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 17,
+  "fields": {
+    "nombre": "Francisco Fydriszewski",
+    "nacionalidad": "Argentina",
+    "equipo": 3,
+    "goles": 12,
+    "asistencias": 7,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 18,
+  "fields": {
+    "nombre": "Dereck Moncada",
+    "nacionalidad": "Colombia",
+    "equipo": 19,
+    "goles": 8,
+    "asistencias": 4,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 19,
+  "fields": {
+    "nombre": "Jorge Rivaldo",
+    "nacionalidad": "Colombia",
+    "equipo": 14,
+    "goles": 8,
+    "asistencias": 2,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 20,
+  "fields": {
+    "nombre": "Rodrigo Conteras",
+    "nacionalidad": "Colombia",
+    "equipo": 15,
+    "goles": 9,
+    "asistencias": 3,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 21,
+  "fields": {
+    "nombre": "Felipe Aguilar",
+    "nacionalidad": "Colombia",
+    "equipo": 10,
+    "goles": 8,
+    "asistencias": 2,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 22,
+  "fields": {
+    "nombre": "Daniel Mantilla",
+    "nacionalidad": "Colombia",
+    "equipo": 9,
+    "goles": 10,
+    "asistencias": 6,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 23,
+  "fields": {
+    "nombre": "Yeison Guzman",
+    "nacionalidad": "Colombia",
+    "equipo": 13,
+    "goles": 13,
+    "asistencias": 10,
+    "vallas_invictas": 0
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 24,
+  "fields": {
+    "nombre": "Jorge Soto",
+    "nacionalidad": "Colombia",
+    "equipo": 13,
+    "goles": 2,
+    "asistencias": 1,
+    "vallas_invictas": 21
+  }
+},
+{
+  "model": "liga.goleador",
+  "pk": 25,
+  "fields": {
+    "nombre": "David Ospina",
+    "nacionalidad": "Colombia",
+    "equipo": 5,
+    "goles": 0,
+    "asistencias": 1,
+    "vallas_invictas": 19
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 1,
+  "fields": {
+    "fecha": "2025-12-08",
+    "equipo_local": 13,
+    "equipo_visitante": 5,
+    "goles_local": 3,
+    "goles_visitante": 2
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 2,
+  "fields": {
+    "fecha": "2025-11-20",
+    "equipo_local": 5,
+    "equipo_visitante": 13,
+    "goles_local": 1,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 3,
+  "fields": {
+    "fecha": "2025-11-02",
+    "equipo_local": 5,
+    "equipo_visitante": 13,
+    "goles_local": 4,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 4,
+  "fields": {
+    "fecha": "2025-11-16",
+    "equipo_local": 13,
+    "equipo_visitante": 5,
+    "goles_local": 2,
+    "goles_visitante": 2
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 5,
+  "fields": {
+    "fecha": "2025-08-24",
+    "equipo_local": 13,
+    "equipo_visitante": 5,
+    "goles_local": 1,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 6,
+  "fields": {
+    "fecha": "2025-03-09",
+    "equipo_local": 5,
+    "equipo_visitante": 13,
+    "goles_local": 1,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 7,
+  "fields": {
+    "fecha": "2024-12-15",
+    "equipo_local": 13,
+    "equipo_visitante": 5,
+    "goles_local": 0,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 8,
+  "fields": {
+    "fecha": "2024-12-12",
+    "equipo_local": 5,
+    "equipo_visitante": 13,
+    "goles_local": 3,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 9,
+  "fields": {
+    "fecha": "2025-10-18",
+    "equipo_local": 10,
+    "equipo_visitante": 13,
+    "goles_local": 0,
+    "goles_visitante": 2
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 10,
+  "fields": {
+    "fecha": "2025-09-07",
+    "equipo_local": 13,
+    "equipo_visitante": 10,
+    "goles_local": 0,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 11,
+  "fields": {
+    "fecha": "2025-04-27",
+    "equipo_local": 13,
+    "equipo_visitante": 10,
+    "goles_local": 2,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 12,
+  "fields": {
+    "fecha": "2025-03-24",
+    "equipo_local": 10,
+    "equipo_visitante": 13,
+    "goles_local": 1,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 13,
+  "fields": {
+    "fecha": "2024-11-03",
+    "equipo_local": 13,
+    "equipo_visitante": 10,
+    "goles_local": 0,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 14,
+  "fields": {
+    "fecha": "2024-10-23",
+    "equipo_local": 10,
+    "equipo_visitante": 13,
+    "goles_local": 0,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 15,
+  "fields": {
+    "fecha": "2024-10-17",
+    "equipo_local": 13,
+    "equipo_visitante": 10,
+    "goles_local": 2,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 16,
+  "fields": {
+    "fecha": "2025-10-07",
+    "equipo_local": 15,
+    "equipo_visitante": 13,
+    "goles_local": 2,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 17,
+  "fields": {
+    "fecha": "2025-04-16",
+    "equipo_local": 13,
+    "equipo_visitante": 15,
+    "goles_local": 0,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 18,
+  "fields": {
+    "fecha": "2025-01-19",
+    "equipo_local": 15,
+    "equipo_visitante": 13,
+    "goles_local": 0,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 19,
+  "fields": {
+    "fecha": "2024-10-11",
+    "equipo_local": 13,
+    "equipo_visitante": 15,
+    "goles_local": 2,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 20,
+  "fields": {
+    "fecha": "2023-12-03",
+    "equipo_local": 13,
+    "equipo_visitante": 15,
+    "goles_local": 1,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 21,
+  "fields": {
+    "fecha": "2025-12-01",
+    "equipo_local": 3,
+    "equipo_visitante": 13,
+    "goles_local": 1,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 22,
+  "fields": {
+    "fecha": "2025-11-27",
+    "equipo_local": 13,
+    "equipo_visitante": 3,
+    "goles_local": 2,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 23,
+  "fields": {
+    "fecha": "2025-11-13",
+    "equipo_local": 3,
+    "equipo_visitante": 13,
+    "goles_local": 3,
+    "goles_visitante": 0
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 24,
+  "fields": {
+    "fecha": "2025-06-19",
+    "equipo_local": 13,
+    "equipo_visitante": 3,
+    "goles_local": 1,
+    "goles_visitante": 1
+  }
+},
+{
+  "model": "liga.partido",
+  "pk": 25,
+  "fields": {
+    "fecha": "2025-05-25",
+    "equipo_local": 13,
+    "equipo_visitante": 3,
+    "goles_local": 2,
+    "goles_visitante": 0
+  }
+}
+]
