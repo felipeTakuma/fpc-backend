@@ -25,5 +25,5 @@ urlpatterns = [
 ]
 
 # esto solo funciona cuando DEBUG es TRUE (img en modo desarrollo)
-if settings.DEBUG:
+if settings.DEBUG or not settings.DEBUG: # Lo forzamos para que funcione en Render
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
