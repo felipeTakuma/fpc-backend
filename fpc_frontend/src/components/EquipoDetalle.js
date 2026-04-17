@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 
 // --- CONFIGURACIÓN DE ICONOS DE LEAFLET ---
@@ -54,6 +53,23 @@ const EquipoDetalle = () => {
             </div>
         );
     }
+
+    // Componente auxiliar para forzar el redibujado del mapa
+const MapPlaceholder = () => {
+    const map = useMap();
+
+    useEffect(() => {
+    // Usamos un pequeño delay para asegurar que el DOM y el CSS estén listos
+        const timer = setTimeout(() => {
+            map.invalidateSize(); // Esta función le dice a Leaflet que el tamaño del contenedor ha cambiado y que debe recalcular el mapa
+            console.log("Mapa recalculado");
+        }, 250); 
+
+        return () => clearTimeout(timer); // Limpieza del timer
+    }, [map]);
+
+    return null; // Este componente no renderiza nada visual
+};
 
     //procesar las coordenadas para el mapa
     const lat = parseFloat(equipo.latitud);
@@ -153,6 +169,9 @@ const EquipoDetalle = () => {
                                     scrollWheelZoom={false}
                                 >
                                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                                    
+                                    {/* INSERTAR AQUÍ EL COMPONENTE ARREGLADOR */}
+                                    <MapPlaceholder />
                                     <Marker position={[lat, lon]}>
                                         <Popup>
                                             <div className="text-black font-bold">
