@@ -7,7 +7,7 @@ class Equipo(models.Model):
     ciudad = models.CharField(max_length= 100)
     historia = models.TextField(verbose_name="Historia")
     ligas_ganadas = models.IntegerField(default=0, verbose_name="Ligas ganadas")
-    escudo = models.ImageField(upload_to='escudos/', null=True, blank= True, verbose_name="Escudo del equipo")
+    escudo = models.URLField(max_length=350, null=True, blank=True, verbose_name="URL Escudo del equipo")
     nombre_estadio = models.CharField(max_length=100, default="Estadio Desconocido")
     latitud = models.FloatField(default=3.430133854126975)
     longitud = models.FloatField(default=-76.54094749615665) #default pascual guerrero

@@ -89,20 +89,14 @@ const EquipoDetalle = () => {
                     {/* Escudo */}
                     <div className="w-44 h-44 md:w-52 md:h-52 bg-white/5 rounded-3xl flex items-center justify-center p-6 border border-white/10 relative z-10 shrink-0 shadow-2xl">
                         <img 
-                        src={
-                            equipo.escudo 
-                            ? (equipo.escudo.startsWith('http') 
-                                ? equipo.escudo 
-                                : `https://fpc-backend-devfelipe.onrender.com${equipo.escudo}`)
-                            : ""
-                        }
-                        onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src = "https://ui-avatars.com/api/?name=FPC"; 
-                        }}
-                        alt={equipo.nombre_equipo}
-                        className="max-w-full max-h-full object-contain" // Agregué esto para que no se deforme
-                    />
+                            src={equipo.escudo} // Directamente el link que viene de la BD
+                            alt={equipo.nombre_equipo}
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "https://ui-avatars.com/api/?name=FPC"; 
+                            }}
+                            className="max-w-full max-h-full object-contain"
+                        />
                     </div>
                     
                     <div className="relative z-10 text-center md:text-left">
