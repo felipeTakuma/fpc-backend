@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
+import 'leaflet/dist/leaflet.css'; // Asegúrate de importar el CSS base
 
-// --- CONFIGURACIÓN DE ICONOS DE LEAFLET ---
+// --- CONFIGURACIÓN DE ICONOS ---
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
@@ -15,22 +16,6 @@ let DefaultIcon = L.icon({
     iconAnchor: [12, 41]
 });
 L.Marker.prototype.options.icon = DefaultIcon;
-
-// Componente auxiliar para forzar el redibujado del mapa (Definido fuera para evitar conflictos)
-const MapPlaceholder = () => {
-    const map = useMap();
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            map.invalidateSize(); 
-            console.log("Mapa recalculado");
-        }, 300); // Un pequeño delay extra para asegurar que el panel glass esté renderizado
-
-        return () => clearTimeout(timer);
-    }, [map]);
-
-    return null;
-};
 
 const EquipoDetalle = () => {
     const { id } = useParams();
@@ -55,21 +40,13 @@ const EquipoDetalle = () => {
     if (loading) {
         return (
             <div className="min-h-screen bg-[#0e0e0e] flex items-center justify-center lg:pl-72">
-                <span className="material-symbols-outlined animate-spin text-blue-500 text-6xl" >autorenew</span>
+                <span className="material-symbols-outlined animate-spin text-blue-500 text-6xl">autorenew</span>
             </div>
         );
     }
 
-    if (!equipo){
-        return (
-            <div className="min-h-screen bg-[#0e0e0e] text-white flex flex-col items-center justify-center -lg:pl-72">
-                <h2 className="text-3xl font-bold text-white mb-4">Equipo no encontrado</h2>
-                <Link to='/equipos' className="text-blue-500 hover:underline" >Volver</Link>
-            </div>
-        );
-    }
+    if (!equipo) return null;
 
-    //procesar las coordenadas para el mapa
     const lat = parseFloat(equipo.latitud);
     const lon = parseFloat(equipo.longitud);
     const tieneCoords = !isNaN(lat) && !isNaN(lon);
@@ -78,110 +55,84 @@ const EquipoDetalle = () => {
         <div className="min-h-screen bg-[#0e0e0e] text-white font-['Inter']">
             <style>{` 
                 .glass-panel {
-                background: rgba(38, 38, 38, 0.4);
-                backdrop-filter: blur(24px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                    background: rgba(38, 38, 38, 0.4);
+                    backdrop-filter: blur(24px);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
                 }
+                /* ESTO SOLUCIONA EL TAMAÑO DE 256px */
                 .leaflet-container {
+                    width: 100% !important;
+                    height: 400px !important; /* Altura fija para obligar al contenedor */
                     filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
                     border-radius: 1.5rem;
+                }
+                /* Asegura que los botones de zoom (+/-) se vean */
+                .leaflet-control-zoom {
+                    border: none !important;
+                    margin-top: 20px !important;
+                    margin-left: 20px !important;
+                }
+                .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+                    background-color: rgba(255, 255, 255, 0.1) !important;
+                    color: white !important;
+                    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                    backdrop-filter: blur(10px);
                 }
             `}</style>
 
             <main className="pt-32 pb-24 lg:pl-72 pr-8 px-6 min-h-screen bg-[radial-gradient(ellipse_at_top,_#1e1b4b_0%,_#0e0e0e_100%)]">
                 
-                {/* BOTÓN VOLVER */}
+                {/* Cabecera del Equipo (Igual que antes) */}
                 <Link to="/equipos" className="inline-flex items-center gap-2 text-gray-500 hover:text-white transition-colors mb-10 font-bold uppercase tracking-widest text-xs">
                     <span className="material-symbols-outlined text-sm">arrow_back</span>
                     Volver al Directorio
                 </Link>
 
-                {/* HEADER PRINCIPAL */}
                 <div className="glass-panel rounded-[2.5rem] p-8 md:p-12 mb-8 flex flex-col md:flex-row items-center md:items-start gap-10 relative overflow-hidden">
-                    <div className="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-                    
-                    {/* Escudo */}
                     <div className="w-44 h-44 md:w-52 md:h-52 bg-white/5 rounded-3xl flex items-center justify-center p-6 border border-white/10 relative z-10 shrink-0 shadow-2xl">
-                        <img 
-                            src={equipo.escudo} 
-                            alt={equipo.nombre_equipo}
-                            onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.src = "https://ui-avatars.com/api/?name=FPC"; 
-                            }}
-                            className="max-w-full max-h-full object-contain"
-                        />
+                        <img src={equipo.escudo} alt={equipo.nombre_equipo} className="max-w-full max-h-full object-contain" />
                     </div>
-                    
                     <div className="relative z-10 text-center md:text-left">
                         <h1 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tighter uppercase font-['Space_Grotesk']">
                             {equipo.nombre_equipo}
                         </h1>
-                        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
-                            <span className="text-gray-400 text-lg uppercase tracking-[0.2em]">{equipo.ciudad}</span>
-                            <span className="text-blue-500/50 hidden md:inline">|</span>
-                            <span className="text-gray-400 text-lg uppercase tracking-[0.2em]">{equipo.nombre_estadio}</span>
-                        </div>
-
-                        {/* Stats rápidas */}
-                        <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto md:mx-0">
-                            <div className="bg-black/40 rounded-2xl p-4 border border-white/5">
-                                <p className="text-[10px] text-gray-500 uppercase font-bold tracking-widest mb-1">Títulos</p>
-                                <p className="text-3xl font-black text-[#2ff801] font-['Space_Grotesk']">{equipo.ligas_ganadas}</p>
-                            </div>
-                            <div className="bg-black/40 rounded-2xl p-4 border border-white/5">
-                                <p className="text-[10px] text-gray-500 uppercase font-bold tracking-widest mb-1">Fundación</p>
-                                <p className="text-3xl font-black text-blue-400 font-['Space_Grotesk']">1946</p> 
-                            </div>
-                        </div>
+                        <p className="text-gray-400 text-lg uppercase tracking-[0.2em]">{equipo.ciudad} | {equipo.nombre_estadio}</p>
                     </div>
                 </div>
 
-                {/* SECCIÓN HISTORIA Y MAPA */}
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-                    
-                    {/* Historia */}
                     <div className="glass-panel rounded-[2rem] p-8 md:p-10">
                         <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-2 font-['Space_Grotesk']">
                             <span className="material-symbols-outlined text-blue-500">history_edu</span>
                             Legado Histórico
                         </h3>
-                        <p className="text-gray-400 leading-relaxed text-lg italic">
-                            {equipo.historia || "La historia de este club es parte fundamental del ecosistema del fútbol profesional colombiano..."}
-                        </p>
+                        <p className="text-gray-400 leading-relaxed text-lg italic">{equipo.historia}</p>
                     </div>
 
-                    {/* Mapa del Estadio */}
-                    <div className="glass-panel rounded-[2rem] p-4 flex flex-col h-[450px]">
+                    {/* SECCIÓN DEL MAPA CORREGIDA */}
+                    <div className="glass-panel rounded-[2rem] p-4 flex flex-col min-h-[480px]">
                         <div className="px-6 py-4 flex items-center justify-between">
-                            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Ubicación Sede </h3>
+                            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Ubicación Sede</h3>
                             <span className="text-[10px] text-[#2ff801] bg-[#2ff801]/10 px-2 py-1 rounded-full font-bold uppercase tracking-widest">Live Map</span>
                         </div>
                         
-                        <div className="flex-grow rounded-2xl overflow-hidden border border-white/10 relative z-0">
+                        <div className="flex-grow rounded-2xl overflow-hidden border border-white/10 bg-black/20">
                             {tieneCoords ? (
                                 <MapContainer
+                                    key={equipo.id} // Forzamos el re-render cuando cambia el equipo
                                     center={[lat, lon]}
                                     zoom={15}
-                                    style={{ height: '100%', width: '100%' }}
-                                    scrollWheelZoom={false}
+                                    style={{ height: '400px', width: '100%' }} // Estilo en línea para Leaflet
                                 >
                                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                                    
-                                    {/* Componente para corregir el tamaño gris */}
-                                    <MapPlaceholder />
-
                                     <Marker position={[lat, lon]}>
                                         <Popup>
-                                            <div className="text-black font-bold">
-                                                {equipo.nombre_estadio}<br/>
-                                                <span className="font-normal text-xs text-gray-500">Casa de {equipo.nombre_equipo}</span>
-                                            </div>
+                                            <div className="text-black font-bold">{equipo.nombre_estadio}</div>
                                         </Popup>
                                     </Marker>
                                 </MapContainer>
                             ) : (
-                                <div className="h-full w-full bg-white/5 flex flex-col items-center justify-center text-gray-600 italic">
+                                <div className="h-full w-full flex flex-col items-center justify-center text-gray-600">
                                     <span className="material-symbols-outlined text-4xl mb-2">map_off</span>
                                     <p className="text-xs uppercase tracking-widest">Coordenadas no disponibles</p>
                                 </div>
