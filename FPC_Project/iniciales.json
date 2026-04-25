@@ -5,10 +5,10 @@
   "fields": {
     "nombre_equipo": "Junior",
     "ciudad": "Barranquilla",
-    "historia": "JUNIOR fue fundado en 1924, ha sido ganador de 9 t�tulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Sudamericana 2018",
+    "historia": "JUNIOR fue fundado en 1924, ha sido ganador de 9 titulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Sudamericana 2018",
     "ligas_ganadas": 10,
     "escudo": "escudos/ESCUDO_JUNIOR.png",
-    "nombre_estadio": "Estadio Metropolitano Roberto Mel�ndez",
+    "nombre_estadio": "Estadio Metropolitano Roberto Melendez",
     "latitud": 10.927065943161638,
     "longitud": -74.80060613737987
   }
@@ -19,10 +19,10 @@
   "fields": {
     "nombre_equipo": "Atletico Bucaramanga",
     "ciudad": "Bucaramanga",
-    "historia": "ATLETICO BUCARAMANGA fue fundado en 1949, ha sido ganador de 1 t�tulo y no aplica a torneo internacional.",
+    "historia": "ATLETICO BUCARAMANGA fue fundado en 1949, ha sido ganador de 1 titulo y no aplica a torneo internacional.",
     "ligas_ganadas": 1,
     "escudo": "escudos/bucaros_escudo_we9nVqJ.webp",
-    "nombre_estadio": "Estadio Departamental Am�rico Montanini",
+    "nombre_estadio": "Estadio Departamental Americo Montanini",
     "latitud": 7.136871277117793,
     "longitud": -73.11659995089899
   }
@@ -33,9 +33,9 @@
   "fields": {
     "nombre_equipo": "Medellin",
     "ciudad": "Medellin",
-    "historia": "MEDELLIN fue fundado en 1913, ha sido ganador de 6 t�tulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Libertadores 2003.",
+    "historia": "MEDELLIN fue fundado en 1913, ha sido ganador de 6 titulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Libertadores 2003.",
     "ligas_ganadas": 6,
-    "escudo": "escudos/Medell�n_Escudo.png",
+    "escudo": "escudos/Medellin_Escudo.png",
     "nombre_estadio": "Estadio Atanasio Girardot",
     "latitud": 6.2569163089890925,
     "longitud": -75.59017826437898
@@ -47,7 +47,7 @@
   "fields": {
     "nombre_equipo": "Fortaleza",
     "ciudad": "Bogota",
-    "historia": "FORTALEZA fue fundado en 2010, no tiene t�tulos de liga y no aplica a torneo internacional.",
+    "historia": "FORTALEZA fue fundado en 2010, no tiene titulos de liga y no aplica a torneo internacional.",
     "ligas_ganadas": 0,
     "escudo": "escudos/forta_escudo.png",
     "nombre_estadio": "Estadio Techo Occidental Sur",
@@ -61,9 +61,9 @@
   "fields": {
     "nombre_equipo": "Atletico Nacional",
     "ciudad": "Medellin",
-    "historia": "ATLETICO NACIONAL fue fundado en 1947, ha sido ganador de 17 t�tulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores (2 veces).",
+    "historia": "ATLETICO NACIONAL fue fundado en 1947, ha sido ganador de 17 titulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores (2 veces).",
     "ligas_ganadas": 18,
-    "escudo": "escudos/Atl�tico_Nacional_Escudo_Nhpq3Hf.png",
+    "escudo": "escudos/Atletico_Nacional_Escudo_Nhpq3Hf.png",
     "nombre_estadio": "Estadio Atanasio Girardot",
     "latitud": 6.2569163089890925,
     "longitud": -75.59017826437898
@@ -75,7 +75,7 @@
   "fields": {
     "nombre_equipo": "Tolima",
     "ciudad": "Ibague",
-    "historia": "TOLIMA fue fundado en 1954, ha sido ganador de 3 t�tulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Sudamericana 2006.",
+    "historia": "TOLIMA fue fundado en 1954, ha sido ganador de 3 titulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Sudamericana 2006.",
     "ligas_ganadas": 3,
     "escudo": "escudos/Escudo_Tolima.png",
     "nombre_estadio": "Estadio Manuel Murillo Toro",
@@ -89,7 +89,7 @@
   "fields": {
     "nombre_equipo": "Santa Fe",
     "ciudad": "Bogota",
-    "historia": "SANTA FE fue fundado en 1941, ha sido ganador de 9 t�tulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Sudamericana 2015.",
+    "historia": "SANTA FE fue fundado en 1941, ha sido ganador de 9 titulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Sudamericana 2015.",
     "ligas_ganadas": 9,
     "escudo": "escudos/santa_fe_escudo_23bJGqd.png",
     "nombre_estadio": "Estadio Nemesio Camacho El Campin",
@@ -103,7 +103,7 @@
   "fields": {
     "nombre_equipo": "Alianza FC",
     "ciudad": "Valledupar",
-    "historia": "ALIANZA FC fue fundado en 2024, no tiene t�tulos de liga y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Sudamericana 2024.",
+    "historia": "ALIANZA FC fue fundado en 2024, no tiene titulos de liga y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Sudamericana 2024.",
     "ligas_ganadas": 0,
     "escudo": "escudos/alianza_escudo.jpg",
     "nombre_estadio": "Estadio Armando Maestre",
@@ -117,7 +117,7 @@
   "fields": {
     "nombre_equipo": "Llaneros",
     "ciudad": "Villavicencio",
-    "historia": "LLANEROS fue fundado en 2011, no tiene t�tulos de liga y no aplica a torneo internacional.",
+    "historia": "LLANEROS fue fundado en 2011, no tiene titulos de liga y no aplica a torneo internacional.",
     "ligas_ganadas": 0,
     "escudo": "escudos/llaneros_escudo.jpg",
     "nombre_estadio": "Estadio Bello Horizonte",
@@ -131,7 +131,7 @@
   "fields": {
     "nombre_equipo": "Deportivo Cali",
     "ciudad": "Cali",
-    "historia": "DEPORTIVO CALI fue fundado en 1912, ha sido ganador de 10 t�tulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Libertadores (2 veces).",
+    "historia": "DEPORTIVO CALI fue fundado en 1912, ha sido ganador de 10 titulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Libertadores (2 veces).",
     "ligas_ganadas": 10,
     "escudo": "escudos/Deportivo_Cali_Escudo.png",
     "nombre_estadio": "Estadio Palmaseca",
@@ -145,7 +145,7 @@
   "fields": {
     "nombre_equipo": "Once Caldas",
     "ciudad": "Caldas",
-    "historia": "\"ONCE CALDAS fue fundado en 1961, ha sido ganador de 4 t�tulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores 2004.\r\n\r\n\"",
+    "historia": "\"ONCE CALDAS fue fundado en 1961, ha sido ganador de 4 titulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores 2004.\r\n\r\n\"",
     "ligas_ganadas": 4,
     "escudo": "escudos/once_caldas_escudo_NjOj4ih.png",
     "nombre_estadio": "Estadio Palogrande",
@@ -159,7 +159,7 @@
   "fields": {
     "nombre_equipo": "Deportivo Pereira",
     "ciudad": "Pereira",
-    "historia": "DEPORTIVO PEREIRA fue fundado en 1944, ha sido ganador de 1 t�tulo y su mejor resultado en competencias internacionales ha sido los Octavos de final de la Copa Libertadores 2023.",
+    "historia": "DEPORTIVO PEREIRA fue fundado en 1944, ha sido ganador de 1 titulo y su mejor resultado en competencias internacionales ha sido los Octavos de final de la Copa Libertadores 2023.",
     "ligas_ganadas": 1,
     "escudo": "escudos/pereira_escudo.png",
     "nombre_estadio": "Estadio Hernan Ramirez Villegas",
@@ -173,9 +173,9 @@
   "fields": {
     "nombre_equipo": "America de Cali",
     "ciudad": "Cali",
-    "historia": "AMERICA DE CALI fue fundado en 1927, ha sido ganador de 15 t�tulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Libertadores (4 veces).",
+    "historia": "AMERICA DE CALI fue fundado en 1927, ha sido ganador de 15 titulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Libertadores (4 veces).",
     "ligas_ganadas": 15,
-    "escudo": "escudos/Am�rica_de_Cali_escudo.png",
+    "escudo": "escudos/America_de_Cali_escudo.png",
     "nombre_estadio": "Estadio Pascual guerrero",
     "latitud": 3.430133854126975,
     "longitud": -76.54094749615665
@@ -187,7 +187,7 @@
   "fields": {
     "nombre_equipo": "Aguilas Doradas",
     "ciudad": "Rionegro",
-    "historia": "AGUILAS DORADAS fue fundado en 2008, no tiene t�tulos de liga y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 2024.",
+    "historia": "AGUILAS DORADAS fue fundado en 2008, no tiene titulos de liga y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 2024.",
     "ligas_ganadas": 1,
     "escudo": "escudos/aguilas_escudo.jpg",
     "nombre_estadio": "Estadio Alberto Grisales",
@@ -201,7 +201,7 @@
   "fields": {
     "nombre_equipo": "Millonarios",
     "ciudad": "Bogota",
-    "historia": "MILLONARIOS fue fundado en 1946, ha sido ganador de 16 t�tulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Libertadores 1989.",
+    "historia": "MILLONARIOS fue fundado en 1946, ha sido ganador de 16 titulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Libertadores 1989.",
     "ligas_ganadas": 16,
     "escudo": "escudos/Millonarios_Escudo.png",
     "nombre_estadio": "Estadio Nemesio Camacho El Campin",
@@ -215,7 +215,7 @@
   "fields": {
     "nombre_equipo": "Envigado",
     "ciudad": "Envigado",
-    "historia": "ENVIGADO fue fundado en 1989, no tiene t�tulos de liga y no aplica a torneo internacional.",
+    "historia": "ENVIGADO fue fundado en 1989, no tiene titulos de liga y no aplica a torneo internacional.",
     "ligas_ganadas": 0,
     "escudo": "escudos/envigado_escudo.png",
     "nombre_estadio": "Estadio Polideportivo Sur",
@@ -229,7 +229,7 @@
   "fields": {
     "nombre_equipo": "Union Magdalena",
     "ciudad": "Magdalena",
-    "historia": "UNION MAGDALENA fue fundado en 1953, ha sido ganador de 1 t�tulo y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 1969.",
+    "historia": "UNION MAGDALENA fue fundado en 1953, ha sido ganador de 1 titulo y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 1969.",
     "ligas_ganadas": 1,
     "escudo": "escudos/union_magdalena_escudo.jpg",
     "nombre_estadio": "Estadio Sierra Nevada",
@@ -243,7 +243,7 @@
   "fields": {
     "nombre_equipo": "Boyaca Chico",
     "ciudad": "Tunja",
-    "historia": "BOYACA CHICO fue fundado en 2002, ha sido ganador de 1 t�tulo y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 2008.",
+    "historia": "BOYACA CHICO fue fundado en 2002, ha sido ganador de 1 titulo y su mejor resultado en competencias internacionales ha sido la Fase de grupos de la Copa Libertadores 2008.",
     "ligas_ganadas": 1,
     "escudo": "escudos/Boyaca-chico_escudo.png",
     "nombre_estadio": "Estadio La Independencia",
@@ -257,7 +257,7 @@
   "fields": {
     "nombre_equipo": "Internacional De Bogota",
     "ciudad": "Bogota",
-    "historia": "EQUIDAD(Anteriormente) fue fundado en 1982, no tiene t�tulos de liga y su mejor resultado en competencias internacionales ha sido los Cuartos de final de la Copa Sudamericana 2019.",
+    "historia": "EQUIDAD(Anteriormente) fue fundado en 1982, no tiene titulos de liga y su mejor resultado en competencias internacionales ha sido los Cuartos de final de la Copa Sudamericana 2019.",
     "ligas_ganadas": 0,
     "escudo": "escudos/inter_bogota_escudo.png",
     "nombre_estadio": "Estadio Metropolitano de Techo",
@@ -271,7 +271,7 @@
   "fields": {
     "nombre_equipo": "Pasto",
     "ciudad": "Pasto",
-    "historia": "PASTO fue fundado en 1949, ha sido ganador de 1 t�tulo y su mejor resultado en competencias internacionales ha sido los Octavos de final de la Copa Sudamericana 2009.",
+    "historia": "PASTO fue fundado en 1949, ha sido ganador de 1 titulo y su mejor resultado en competencias internacionales ha sido los Octavos de final de la Copa Sudamericana 2009.",
     "ligas_ganadas": 1,
     "escudo": "escudos/pasto_escudo_y985ijg.png",
     "nombre_estadio": "Estadio Departamental Libertad",
