@@ -16,12 +16,27 @@ let DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
+// Componente auxiliar para forzar el redibujado del mapa (Definido fuera para evitar conflictos)
+const MapPlaceholder = () => {
+    const map = useMap();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            map.invalidateSize(); 
+            console.log("Mapa recalculado");
+        }, 300); // Un pequeño delay extra para asegurar que el panel glass esté renderizado
+
+        return () => clearTimeout(timer);
+    }, [map]);
+
+    return null;
+};
+
 const EquipoDetalle = () => {
     const { id } = useParams();
     const [equipo, setEquipo] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    //Primero, cargamos los datos del equipo - useCallback lo que hace es memorizar la función para que no se vuelva a crear en cada renderizado, lo que es útil para evitar llamadas innecesarias a useEffect
     const cargarEquipo = useCallback(async () => {
         try {
             const res = await axios.get(`https://fpc-backend-devfelipe.onrender.com/api/equipos/${id}/`);
@@ -53,23 +68,6 @@ const EquipoDetalle = () => {
             </div>
         );
     }
-
-    // Componente auxiliar para forzar el redibujado del mapa
-const MapPlaceholder = () => {
-    const map = useMap();
-
-    useEffect(() => {
-    // Usamos un pequeño delay para asegurar que el DOM y el CSS estén listos
-        const timer = setTimeout(() => {
-            map.invalidateSize(); // Esta función le dice a Leaflet que el tamaño del contenedor ha cambiado y que debe recalcular el mapa
-            console.log("Mapa recalculado");
-        }, 250); 
-
-        return () => clearTimeout(timer); // Limpieza del timer
-    }, [map]);
-
-    return null; // Este componente no renderiza nada visual
-};
 
     //procesar las coordenadas para el mapa
     const lat = parseFloat(equipo.latitud);
@@ -105,7 +103,7 @@ const MapPlaceholder = () => {
                     {/* Escudo */}
                     <div className="w-44 h-44 md:w-52 md:h-52 bg-white/5 rounded-3xl flex items-center justify-center p-6 border border-white/10 relative z-10 shrink-0 shadow-2xl">
                         <img 
-                            src={equipo.escudo} // Directamente el link que viene de la BD
+                            src={equipo.escudo} 
                             alt={equipo.nombre_equipo}
                             onError={(e) => {
                                 e.target.onerror = null;
@@ -170,8 +168,9 @@ const MapPlaceholder = () => {
                                 >
                                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                                     
-                                    {/* INSERTAR AQUÍ EL COMPONENTE ARREGLADOR */}
+                                    {/* Componente para corregir el tamaño gris */}
                                     <MapPlaceholder />
+
                                     <Marker position={[lat, lon]}>
                                         <Popup>
                                             <div className="text-black font-bold">
