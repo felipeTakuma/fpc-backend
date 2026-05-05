@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 const Home = () => {
@@ -12,76 +12,83 @@ const Home = () => {
     const [noticias, setNoticias] = useState([]); //useState lo que hace es crear un estado local en el componente, en este caso un array vacío para almacenar las noticias que se cargarán desde la API.
     const [cargandoNoticias, setCargandoNoticias] = useState(true);
 
-    // --- EFECTO 1: TRAER GOLEADORES DE LA BASE DE DATOS ---
-    useEffect(() => {
-        axios.get('https://fpc-backend-devfelipe.onrender.com/api/goleadores/')
-            .then(res => {
-                const goleadores = res.data;
-                const getTopScorer = (palabraClave) => {
-                    const equipoGoleadores = goleadores.filter(g => 
-                        g.equipo && g.equipo.nombre_equipo.toLowerCase().includes(palabraClave.toLowerCase())
-                    );
-                    if (equipoGoleadores.length === 0) return { nombre: "Cargando datos", goles: 0 };
-                    return equipoGoleadores.sort((a, b) => b.goles - a.goles)[0];
-                };
-                setGoleadoresHero({
-                    nacional: getTopScorer('nacional'),
-                    medellin: getTopScorer('medellin')
-                });
-            })
-            .catch(err => {
-                console.error("Error cargando goleadores para el Home:", err);
-                // DATOS DE RESPALDO
-                setGoleadoresHero({
-                    nacional: { nombre: "E. Cardona", goles: 6 },
-                    medellin: { nombre: "B. León", goles: 5 }
-                });
+    // --- FUNCION MEMORIZADA PARA CARGAR TODO EL CONTENIDO DINÁMICO ---
+    // usamos UseCallback para memorizar y que no se vuelva a crear la función cada vez que el componente se renderiza.
+    const cargarDatosIniciales = useCallback(async () => {
+        try {
+            //Realizamos ambas peticiones en paralelo usando Promise.all para optimizar tiempos de carga.
+            const [resGoleadores, resNoticias] = await Promise.all([
+                axios.get('https://fpc-backend-devfelipe.onrender.com/api/goleadores/'),
+                axios.get('https://fpc-backend-devfelipe.onrender.com/api/noticias/')
+            ]);
+
+            //procesamos los goleadores
+            const goleadores = resGoleadores.data;
+            const getTopScorer = (palabraClave) => {
+                const equipoGoleadores = goleadores.filter(g =>
+                    g.equipo && g.equipo.nombre_equipo.toLowerCase().includes(palabraClave.toLowerCase())
+                );
+                if (equipoGoleadores.length === 0) return { nombre: "Sin datos", goles: "-" };
+                return equipoGoleadores.sort((a, b) => b.goles - a.goles)[0]; // Ordenamos por goles y tomamos el primero (máximo)
+            };
+            setGoleadoresHero({
+                nacional: getTopScorer("nacional"),
+                medellin: getTopScorer("medellin")
             });
+            //procesamos las noticias
+            setNoticias(resNoticias.data);
+            setCargandoNoticias(false);
+
+        } catch (error) {
+            console.error("Error 429 o de conexion detectado:", error);
+
+            //si el error es 429, el server nos bloqueo.usamos datos de respaldo.
+            if (error.response && error.response.status === 429) {
+                console.warn("Demasiadas peticiones. Cargando datos de respaldo...");
+            }
+
+            //Datos de respaldo
+            setGoleadoresHero({
+                nacional: { nombre: "E. Cardona", goles: 6},
+                medellin: { nombre: "B. Leon", goles: 5 }
+            });
+            setNoticias([
+                { 
+                    id: 1, 
+                    titulo: "Liga BetPlay: Novedades de la jornada y tabla de posiciones", 
+                    resumen: "Un resumen completo de los encuentros más destacados del fin de semana.", 
+                    fuente: "FPC News", 
+                    tiempo: "Hace 1h", 
+                    imagen: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=200",
+                    url: "#"
+                },
+                { 
+                    id: 2, 
+                    titulo: "Mercado de pases al rojo vivo en el fútbol colombiano", 
+                    resumen: "Movimientos clave en los equipos élite de cara a los cuadrangulares.", 
+                    fuente: "Transfer FPC", 
+                    tiempo: "Hace 3h", 
+                    imagen: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=200",
+                    url: "#"
+                },
+                { 
+                    id: 3, 
+                    titulo: "La Inteligencia Artificial revoluciona la táctica en la liga", 
+                    resumen: "Cómo los clubes están invirtiendo en ciencia de datos para ganar partidos.", 
+                    fuente: "Tech Sports", 
+                    tiempo: "Hace 5h", 
+                    imagen: "https://images.unsplash.com/photo-1518605368461-1ee7e54c00d4?w=200",
+                    url: "#"
+                }
+            ]);
+            setCargandoNoticias(false);
+        }
     }, []);
 
-    // --- EFECTO 2: TRAER NOTICIAS DEL BACKEND ---
     useEffect(() => {
-        axios.get('https://fpc-backend-devfelipe.onrender.com/api/noticias/')
-            .then(res => {
-                setNoticias(res.data);
-                setCargandoNoticias(false);
-            })
-            .catch(err => {
-                console.error("Error cargando noticias:", err);
-                // DATOS DE RESPALDO 
-                setNoticias([
-                    { 
-                        id: 1, 
-                        titulo: "Liga BetPlay: Novedades de la jornada y tabla de posiciones", 
-                        resumen: "Un resumen completo de los encuentros más destacados del fin de semana.", 
-                        fuente: "FPC News", 
-                        tiempo: "Hace 1h", 
-                        imagen: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=200",
-                        url: "#"
-                    },
-                    { 
-                        id: 2, 
-                        titulo: "Mercado de pases al rojo vivo en el fútbol colombiano", 
-                        resumen: "Movimientos clave en los equipos élite de cara a los cuadrangulares.", 
-                        fuente: "Transfer FPC", 
-                        tiempo: "Hace 3h", 
-                        imagen: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=200",
-                        url: "#"
-                    },
-                    { 
-                        id: 3, 
-                        titulo: "La Inteligencia Artificial revoluciona la táctica en la liga", 
-                        resumen: "Cómo los clubes están invirtiendo en ciencia de datos para ganar partidos.", 
-                        fuente: "Tech Sports", 
-                        tiempo: "Hace 5h", 
-                        imagen: "https://images.unsplash.com/photo-1518605368461-1ee7e54c00d4?w=200",
-                        url: "#"
-                    }
-                ]);
-                setCargandoNoticias(false);
-            });
-    }, []);
-
+        cargarDatosIniciales();
+    }, [cargarDatosIniciales]); // solo se ejecuta una vez al montar el componente, gracias a la dependencia de cargarDatosIniciales que está memorizado.
+    
     return (
         <div className="stitch-theme min-h-screen bg-[#0e0e0e] text-white font-['Inter'] selection:bg-blue-500 selection:text-white">
             {/* INYECTOR DE ESTILOS CSS */}
