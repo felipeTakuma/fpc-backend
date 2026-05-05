@@ -11,6 +11,7 @@ const Home = () => {
     // --- ESTADO 2: NOTICIAS DINÁMICAS ---
     const [noticias, setNoticias] = useState([]); //useState lo que hace es crear un estado local en el componente, en este caso un array vacío para almacenar las noticias que se cargarán desde la API.
     const [cargandoNoticias, setCargandoNoticias] = useState(true);
+    const [yaCargoExito, setYaCargoExito] = useState(false); //nuevo estado para controlar si ya se cargaron datos exitosamente alguna vez, para evitar mostrar el mensaje de error repetidamente.
 
     // --- FUNCION MEMORIZADA PARA CARGAR TODO EL CONTENIDO DINÁMICO ---
     // usamos UseCallback para memorizar y que no se vuelva a crear la función cada vez que el componente se renderiza.
@@ -28,7 +29,7 @@ const Home = () => {
                 const equipoGoleadores = goleadores.filter(g =>
                     g.equipo && g.equipo.nombre_equipo.toLowerCase().includes(palabraClave.toLowerCase())
                 );
-                if (equipoGoleadores.length === 0) return { nombre: "Sin datos", goles: "-" };
+                if (equipoGoleadores.length === 0) return { nombre: "Cargando", goles: "-" };
                 return equipoGoleadores.sort((a, b) => b.goles - a.goles)[0]; // Ordenamos por goles y tomamos el primero (máximo)
             };
             setGoleadoresHero({
@@ -37,8 +38,8 @@ const Home = () => {
             });
             //procesamos las noticias
             setNoticias(resNoticias.data);
+            setYaCargoExito(true);
             setCargandoNoticias(false);
-
         } catch (error) {
             console.error("Error 429 o de conexion detectado:", error);
 
@@ -46,8 +47,8 @@ const Home = () => {
             if (error.response && error.response.status === 429) {
                 console.warn("Demasiadas peticiones. Cargando datos de respaldo...");
             }
-
-            //Datos de respaldo
+            if (!yaCargoExito) {
+            console.error("Error en petición:", error);
             setGoleadoresHero({
                 nacional: { nombre: "E. Cardona", goles: 6},
                 medellin: { nombre: "B. Leon", goles: 5 }
@@ -80,15 +81,21 @@ const Home = () => {
                     imagen: "https://images.unsplash.com/photo-1518605368461-1ee7e54c00d4?w=200",
                     url: "#"
                 }
-            ]);
+            ]);            
             setCargandoNoticias(false);
         }
-    }, []);
+        }
+    }, [yaCargoExito]);
 
     useEffect(() => {
-        cargarDatosIniciales();
+        let montado = true; // bandera para evitar actualizar estado si el componente se desmonta antes de que la petición termine
+
+        if (montado) {
+            cargarDatosIniciales();
+        }
+        return () => { montado = false };
     }, [cargarDatosIniciales]); // solo se ejecuta una vez al montar el componente, gracias a la dependencia de cargarDatosIniciales que está memorizado.
-    
+
     return (
         <div className="stitch-theme min-h-screen bg-[#0e0e0e] text-white font-['Inter'] selection:bg-blue-500 selection:text-white">
             {/* INYECTOR DE ESTILOS CSS */}
