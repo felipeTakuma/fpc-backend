@@ -11,6 +11,8 @@ class Equipo(models.Model):
     nombre_estadio = models.CharField(max_length=100, default="Estadio Desconocido")
     latitud = models.FloatField(default=3.430133854126975)
     longitud = models.FloatField(default=-76.54094749615665) #default pascual guerrero
+    rating_ia = models.IntegerField(default=70, verbose_name="Rating de IA")
+    llave_posicion = models.CharField(max_length=1, verbose_name="Llave y posición en los playoffs", null=True, blank=True)
 
     #metodo para que al mostrar el obj en django se vea el name del team
     def __str__(self):

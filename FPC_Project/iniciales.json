@@ -4,6 +4,8 @@
   "pk": 1,
   "fields": {
     "nombre_equipo": "Junior",
+    "rating_ia": 82,
+    "llave_posicion": "D1",
     "ciudad": "Barranquilla",
     "historia": "JUNIOR fue fundado en 1924, ha sido ganador de 9 titulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Sudamericana 2018",
     "ligas_ganadas": 10,
@@ -60,6 +62,8 @@
   "pk": 5,
   "fields": {
     "nombre_equipo": "Atletico Nacional",
+    "rating_ia": 90,
+    "llave_posicion":"A1",
     "ciudad": "Medellin",
     "historia": "ATLETICO NACIONAL fue fundado en 1947, ha sido ganador de 17 titulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores (2 veces).",
     "ligas_ganadas": 18,
@@ -74,6 +78,8 @@
   "pk": 6,
   "fields": {
     "nombre_equipo": "Tolima",
+    "rating_ia": 88,
+    "llave_posicion": "B1",
     "ciudad": "Ibague",
     "historia": "TOLIMA fue fundado en 1954, ha sido ganador de 3 titulos y su mejor resultado en competencias internacionales ha sido la Semifinal de la Copa Sudamericana 2006.",
     "ligas_ganadas": 3,
@@ -88,6 +94,8 @@
   "pk": 7,
   "fields": {
     "nombre_equipo": "Santa Fe",
+    "rating_ia": 78,
+    "llave_posicion": "C1",
     "ciudad": "Bogota",
     "historia": "SANTA FE fue fundado en 1941, ha sido ganador de 9 titulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Sudamericana 2015.",
     "ligas_ganadas": 9,
@@ -144,6 +152,8 @@
   "pk": 11,
   "fields": {
     "nombre_equipo": "Once Caldas",
+    "rating_ia": 84,
+    "llave_posicion": "D2",
     "ciudad": "Caldas",
     "historia": "\"ONCE CALDAS fue fundado en 1961, ha sido ganador de 4 titulos y su mejor resultado en competencias internacionales ha sido el Campeonato de la Copa Libertadores 2004.\r\n\r\n\"",
     "ligas_ganadas": 4,
@@ -172,6 +182,8 @@
   "pk": 13,
   "fields": {
     "nombre_equipo": "America de Cali",
+    "rating_ia": 87,
+    "llave_posicion":"C2",
     "ciudad": "Cali",
     "historia": "AMERICA DE CALI fue fundado en 1927, ha sido ganador de 15 titulos y su mejor resultado en competencias internacionales ha sido el Subcampeonato de la Copa Libertadores (4 veces).",
     "ligas_ganadas": 15,
@@ -256,6 +268,8 @@
   "pk": 19,
   "fields": {
     "nombre_equipo": "Internacional De Bogota",
+    "rating_ia": 79,
+    "llave_posicion":"A2",
     "ciudad": "Bogota",
     "historia": "EQUIDAD(Anteriormente) fue fundado en 1982, no tiene titulos de liga y su mejor resultado en competencias internacionales ha sido los Cuartos de final de la Copa Sudamericana 2019.",
     "ligas_ganadas": 0,
@@ -270,6 +284,8 @@
   "pk": 20,
   "fields": {
     "nombre_equipo": "Pasto",
+    "rating_ia": 85,
+    "llave_posicion": "B2",
     "ciudad": "Pasto",
     "historia": "PASTO fue fundado en 1949, ha sido ganador de 1 titulo y su mejor resultado en competencias internacionales ha sido los Octavos de final de la Copa Sudamericana 2009.",
     "ligas_ganadas": 1,

@@ -1,6 +1,8 @@
 #define las operaciones que se pueden realizar sobre el modelo Equipo
 from django.shortcuts import render
+from django.http import JsonResponse
 from .models import Equipo, Goleador, Partido
+from .simulador import ejecutar_montecarlo
 from .serializers import EquipoSerializer, GoleadorSerializer, PartidoSerializer
 from rest_framework import viewsets
 from rest_framework.views import APIView
@@ -91,3 +93,37 @@ def obtener_noticias(request):
     except Exception as e:
         print(f"EXCEPCIÓN EN EL BACKEND: {str(e)}")
         return Response([], status=500)
+
+
+
+def simulador_ia_view(request): #request nos ayuda a acceder a los parametros enviados desde el frontend (ej: ?iteraciones=1000)
+    try:
+        #filtramos solo los equipos que estan en los playoffs(llave asignada)
+        equipos_playoffs = Equipo.objects.exclude(llave_posicion__isnull=True).exclude(llave_posicion__exact='')
+
+        #Preparamos los datos en formato de dict para el algoritmo montecarlo
+        lista_equipos = []
+        for eq in equipos_playoffs:
+            lista_equipos.append({
+                'nombre_equipo': eq.nombre_equipo,
+                'rating_ia': eq.rating_ia,
+                'llave_posicion': eq.llave_posicion,
+                'escudo': eq.escudo if eq.escudo else ""
+            })
+
+        #debug para verificar que los equipos y sus llaves se estan obteniendo correctamente
+        print(f"DEBUG: Equipos encontrados para playoffs: {len(lista_equipos)}")
+        for e in lista_equipos:
+            print(f"- {e['nombre_equipo']}: {e['llave_posicion']}")
+
+        #verificamos que esten los 8
+        if(len(lista_equipos) != 8):
+            return JsonResponse({"Error": f"No hay 8 equipos en playoffs, hay {len(lista_equipos)}"}, status=400)
+
+        resultados = ejecutar_montecarlo(lista_equipos, iteraciones=1000)
+
+        return JsonResponse({'simulacion': resultados})
+
+    except Exception as e:
+        # Esto te dirá el error real en el JSON si algo explota
+        return JsonResponse({'error_interno': str(e)}, status=500)
