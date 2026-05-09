@@ -100,15 +100,15 @@ const SimuladorIA = () => {
                             <ul className="space-y-4 text-gray-400 text-sm leading-relaxed">
                                 <li className="flex gap-3">
                                     <span className="text-[#2ff801] font-bold">01.</span>
-                                    La IA toma el <b>Rating de Poder</b> de cada equipo y simula los 180 minutos de cada llave.
+                                    La IA toma el Rating de Poder de cada equipo y simula los 180 minutos de cada llave.
                                 </li>
                                 <li className="flex gap-3">
                                     <span className="text-[#2ff801] font-bold">02.</span>
-                                    Introduce un factor de <b>Entropía del 10%</b> para considerar lesiones, errores arbitrales o "suerte del campeón".
+                                    Introduce un factor de Entropía del 10% para considerar lesiones, errores arbitrales o "suerte del campeón".
                                 </li>
                                 <li className="flex gap-3">
                                     <span className="text-[#2ff801] font-bold">03.</span>
-                                    En caso de empate global tras la simulación, se define mediante una <b>tanda de penaltis estocástica</b>.
+                                    En caso de empate global tras la simulación, se define mediante una tanda de penaltis estocástica.
                                 </li>
                             </ul>
                         </div>
