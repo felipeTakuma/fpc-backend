@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Prediccion from './components/Prediccion';
 import Equipos from './components/Equipos';
 import EquipoDetalle from './components/EquipoDetalle';
+import SimuladorIA from './components/SimuladorIA';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/prediccion" element={<Prediccion />} />
           <Route path="/equipos" element={<Equipos />} />
           <Route path="/equipos/:id" element={<EquipoDetalle />} />
+          <Route path='/simulacion' element={<SimuladorIA />} />
         </Routes>
       </div>
     </Router>

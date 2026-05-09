@@ -33,8 +33,8 @@ const Home = () => {
                 return equipoGoleadores.sort((a, b) => b.goles - a.goles)[0]; // Ordenamos por goles y tomamos el primero (máximo)
             };
             setGoleadoresHero({
-                nacional: getTopScorer("nacional"),
-                medellin: getTopScorer("medellin")
+                nacional: getTopScorer(5),
+                medellin: getTopScorer(3)
             });
             //procesamos las noticias
             setNoticias(resNoticias.data);

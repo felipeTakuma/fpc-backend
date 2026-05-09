@@ -140,6 +140,9 @@ const Navigation = () => {
                     <a href="/equipos" className={`transition-colors pb-1 ${isActive('/equipos') ? 'text-white border-b-2 border-blue-500' : 'text-gray-500 hover:text-white'}`}>
                         Equipos
                     </a>
+                    <a href='/simulacion' className={`transition-colors pb-1 ${isActive('/simulacion') ? 'text-white border-b-2 border-blue-500' : 'text-gray-500 hover:text-white'}`}>
+                        Simulador
+                    </a>
                 </div>
 
                 {/* Acciones Derecha */}
